@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Resume Builder</title>
+    <link rel="stylesheet" href="./CSS/Styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.12.1/html2pdf.bundle.min.js" defer></script>
+    <script src="./JS/Script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form" id="form">
+            <h3>fill resume info</h3>
+
+            <div class="box">
+                <p>name</p>
+                <input type="text" id="name" maxlength="40" placeholder="e.g. jhon doe">
+            </div>
+
+            <div class="box">
+                <p>number</p>
+                <input type="number" id="phone" placeholder="+994-0123456789"
+                    oninput="if(this.value.length > 15) this.value = this.value.slice(0, 15);">
+            </div>
+
+            <div class="box">
+                <p>email</p>
+                <input type="email" id="email" maxlength="50" placeholder="example@gmail.com">
+            </div>
+
+            <div class="box">
+                <p>address</p>
+                <input type="text" id="address" maxlength="100" placeholder="locality, city, state">
+            </div>
+
+            <div class="box">
+                <p>profile</p>
+                <input type="file" id="photo" accept="image/*">
+            </div>
+
+            <div class="box">
+                <p>objectives</p>
+                <textarea id="objectives" maxlength="250" rows="3"
+                    placeholder="write your career objectives..."></textarea>
+            </div>
+
+            <div class="box">
+                <p>education</p>
+                <textarea id="education" maxlength="300" rows="3" placeholder="Degree / College / Year"></textarea>
+            </div>
+
+            <div class="box">
+                <p>skills (upto 5)</p>
+                <input type="text" max="40" id="skill-input" placeholder="add a skill...">
+                <button class="btn" id="add-skill" type="button">add</button>
+                <ul id="skill-list"></ul>
+            </div>
+
+            <div class="box">
+                <p>experience</p>
+                <textarea id="experience" maxlength="350" rows="3"
+                    placeholder="Company / Role / Description / Duration"></textarea>
+            </div>
+
+            <div class="box">
+                <p>languages</p>
+                <input type="text" id="languages" maxlength="100" placeholder="Comma separated">
+            </div>
+
+            <div class="box">
+                <p>projects (upto 5)</p>
+                <input type="text" max="40" id="project-input" placeholder="add a project...">
+                <button class="btn" id="add-project" type="button">add</button>
+                <ul id="project-list"></ul>
+            </div>
+
+            <button class="btn" id="downloadPdf" type="button">download PDF</button>
+        </div>
+
+        <div id="resume" class="preview">
+            <div class="resume-header">
+                <div>
+                    <h3 id="preview-name">Your Name</h3>
+                    <p><i class="fas fa-phone"></i> <span id="preview-phone">your number</span></p>
+                    <p><i class="fas fa-envelope"></i> <span id="preview-email">your email</span></p>
+                    <p><i class="fas fa-map-marker-alt"></i> <span id="preview-address">your address</span></p>
+                </div>
+                <div id="preview-photo" class="photo"></div>
+            </div>
+
+            <div class="box">
+                <h3>objectives</h3>
+                <p id="preview-objectives">your career objectives goes here...</p>
+            </div>
+
+            <div class="box">
+                <h3>education</h3>
+                <p id="preview-education">your education details...</p>
+            </div>
+
+            <div class="box">
+                <h3>skills</h3>
+                <ul id="preview-skills">your skills...</ul>
+            </div>
+
+            <div class="box">
+                <h3>experience</h3>
+                <p id="preview-experience">your experience details...</p>
+            </div>
+
+            <div class="box">
+                <h3>languages</h3>
+                <p id="preview-languages">English, Azeri...</p>
+            </div>
+
+            <div class="box">
+                <h3>projects</h3>
+                <ul id="preview-projects">your projects...</ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
